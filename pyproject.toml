@@ -17,3 +17,7 @@ pytest = "^8.3.2"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[project.urls]
+Homepage = "https://github.com/hamzeh-pm/django_mongoengine_logger"
+Issues = "https://github.com/hamzeh-pm/django_mongoengine_logger/issues"
