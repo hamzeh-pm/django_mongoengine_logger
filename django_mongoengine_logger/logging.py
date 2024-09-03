@@ -3,7 +3,7 @@ import logging
 from datetime import datetime
 
 from django.utils.module_loading import import_string
-from mongoengine import Document
+from mongoengine import Document, get_connection
 
 
 def is_json_loadable(message):
@@ -46,6 +46,12 @@ class MongoDBHandler(logging.Handler):
             raise ValueError(
                 f"log_document must have the following fields: {', '.join(required_fields)}"
             )
+
+        # check if the monogengine connection to database stablish or not
+        try:
+            get_connection()
+        except Exception as e:
+            raise ValueError("There is no connection to the database exists")
 
     def emit(self, record):
         """
