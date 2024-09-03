@@ -128,6 +128,5 @@ poetry.lock
 # VS Code
 .vscode/
 
-
 # Distribution directory
 dist/
